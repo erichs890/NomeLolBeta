@@ -4,3 +4,6 @@ body{
     flex-direction: column;
     text-align: center;
 }
+#bonecosDiv{
+    padding: 11px;
+}
