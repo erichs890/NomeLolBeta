@@ -7,3 +7,16 @@ body{
 #bonecosDiv{
     padding: 11px;
 }
+footer {
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.credits {
+    font-size: 14px;
+}
+
+.credits p {
+    margin: 5px 0;
+}
