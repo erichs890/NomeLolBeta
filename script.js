@@ -96,7 +96,7 @@ const campeoes = [
     {nomeBeta:"Linda Orquidea",nomeLol:"Maokai",foto:"./fotoCampeoes/maokai.png"},
     {nomeBeta:"Esqueleto Online",nomeLol:"Thresh",foto:"./fotoCampeoes/thresh.png"},
     {nomeBeta:"Ao Vivo Online",nomeLol:"Viego",foto:"./fotoCampeoes/viego.png"},
-    {nomeBeta:"Lukinha Du Corte",nomeLol:"Gwen",foto:"./fotoCampeoes/gwen.png"},
+    {nomeBeta:"Lukinha Du Corte",nomeLol:"Gwen",foto:"./fotoCampeoes/gwen.jpg"},
     {nomeBeta:"Online Maligno",nomeLol:"Cho'Gath",foto:"./fotoCampeoes/cho'gath.png"},
     {nomeBeta:"Pica",nomeLol:"Pyke",foto:"./fotoCampeoes/pyke.png"},
     {nomeBeta:"Funny Lol",nomeLol:"Sylas",foto:"./fotoCampeoes/sylas.png"},
