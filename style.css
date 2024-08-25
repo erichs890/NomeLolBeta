@@ -1,20 +1,37 @@
 body{
     font-family: "Roboto", sans-serif;
-    display: flex;
-    flex-direction: column;
+
+    align-items: center;
     text-align: center;
 }
-#bonecosDiv{
-    padding: 11px;
+.pesquisaDiv{
+    justify-content: center;
+    text-align: center;
 }
+.pesquisa{
+    width: 140px;
+}
+
 footer {
     padding: 10px;
     text-align: center;
     margin-top: 20px;
 }
-
+.bonecosDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 11px;
+}
 .credits {
     font-size: 14px;
+}
+.fotoPrincipal{
+    display: block;
+    margin: 0 auto; 
+    max-width: 100%;
 }
 
 .credits p {

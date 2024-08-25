@@ -1,5 +1,4 @@
 const buscarInput = document.querySelector("#pesquisa")
-const form = document.querySelector("#form")
 const bonecosDiv = document.querySelector("#bonecosDiv")
 
 const campeoes = [
@@ -127,31 +126,42 @@ const campeoes = [
     {nomeBeta:"Bu'Ceth",nomeLol:"Bel'Veth",foto:"./fotoCampeoes/bel'veth.png"},
 ]
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault()
+buscarInput.addEventListener("input", () => {
     const valor = buscarInput.value.trim().toLowerCase()
-   
     bonecosDiv.innerHTML = ""
-    let encontrouCampeao = false
 
-    campeoes.forEach((campeaoDaVez) => {
-        const prioridades = [campeaoDaVez.nomeBeta.trim().toLowerCase(), campeaoDaVez.nomeLol.trim().toLowerCase()]
-        if (prioridades.includes(valor)) {
-            const boneco = document.createElement("div")
-            boneco.innerHTML = `
-                <h2>${campeaoDaVez.nomeBeta}</h2>
-                <p><strong>${campeaoDaVez.nomeLol}</strong></p>
-                <img src="${campeaoDaVez.foto}">
-            `
-            bonecosDiv.appendChild(boneco)
-            encontrouCampeao = true
-        }
-    })
-
-    if (!encontrouCampeao) {
-        alert("Campeão não lançado no beta.")
-        bonecosDiv.innerHTML = `<img src="FotoCompleta.jpg"> `
+    if (valor === "") {
+        const imagemInicial = document.createElement("img")
+        imagemInicial.src = "FotoCompleta.jpg"
+        bonecosDiv.appendChild(imagemInicial)
+        return
     }
 
-    buscarInput.value = ""
+    const campeoesFiltrados = campeoes.filter(campeao => 
+        campeao.nomeBeta.toLowerCase().includes(valor) ||
+        campeao.nomeLol.toLowerCase().includes(valor)
+    )
+
+    if (campeoesFiltrados.length === 0) {
+        const mensagem = document.createElement("p")
+        mensagem.textContent = "Campeão não lançado no Beta."
+        bonecosDiv.appendChild(mensagem)
+        return
+    }
+
+    campeoesFiltrados.forEach(campeao => {
+        const boneco = document.createElement("div")
+        boneco.classList.add("boneco")
+        
+        boneco.innerHTML = `
+        <div class="countainer">
+            <h2>${campeao.nomeBeta}</h2>
+            <p><strong>${campeao.nomeLol}</strong></p>
+            <img src="${campeao.foto}" alt="${campeao.nomeLol}">
+            </div>
+        `
+
+        bonecosDiv.appendChild(boneco)
+    })
 })
+
